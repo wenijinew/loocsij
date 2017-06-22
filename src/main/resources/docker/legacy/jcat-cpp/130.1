@@ -1,0 +1,11 @@
+# Dockerfile for JCAT CPP execution environment
+# Version: 132.0
+# JDK 1.6, Maven , Git , Ant, TCSH
+
+FROM sekidocker.rnd.ki.sw.ericsson.se/proj_jcat/jcat-cpp:130.0-demo
+MAINTAINER Bruce Wen "bruce.wen@ericsson.com"
+
+RUN echo "#!/usr/bin/tcsh" > /usr/bin/run-jcat-130.0.sh
+RUN echo "setenv PTP /app/moshell/latest/moshell:/wspace/tools/coco:/wspace/tools/cbm:/wspace/config:/wspace/tools/tc2x:/wspace/tools/loco/bin:/wspace/tools/jcat:/wspace/tools/jtraffic" >> /usr/bin/run-jcat-130.0.sh
+RUN echo "run-jcat-130.0" >> /usr/bin/run-jcat-130.0.sh
+RUN chmod u+x /usr/bin/run-jcat-130.0.sh

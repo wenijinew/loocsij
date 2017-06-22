@@ -1,0 +1,38 @@
+• Step 1: Build Images
+	cd /c/Users/egugwen/Documents/MobaXterm/home/wspace/dockerfiles/jcat-cpp
+	
+	docker build -f 130.0 -t sekidocker.rnd.ki.sw.ericsson.se/proj_jcat/jcat-cpp:demo-130.0  .
+	
+	docker build -f 135.0 -t sekidocker.rnd.ki.sw.ericsson.se/proj_jcat/jcat-cpp:demo-152.0  .
+
+• Step 2: Push Images to Registry
+	docker push sekidocker.rnd.ki.sw.ericsson.se/proj_jcat/jcat-cpp:demo-130.0
+	
+	docker push sekidocker.rnd.ki.sw.ericsson.se/proj_jcat/jcat-cpp:demo-152.0
+
+• Step 2.1 Tag for images
+	docker tag [IMAGE ID] sekidocker.rnd.ki.sw.ericsson.se/proj_jcat/jcat-cpp:demo-130.1
+	
+• Step 2.2 Search images on Registry
+	docker@boot2docker:~$ curl -u egugwen https://arm.rnd.ki.sw.ericsson.se/artifactory/api/search/pattern?pattern=docker-v2-hub-local:proj_jcat/*/*/manifest.json
+	Enter host password for user 'egugwen':
+	{
+	  "repoUri" : "https://arm.rnd.ki.sw.ericsson.se/artifactory/docker-v2-hub-local",
+	  "sourcePattern" : "docker-v2-hub-local:proj_jcat/*/*/manifest.json",
+	  "files" : [ "proj_jcat/jcat-cpp/maven_openjdk7/manifest.json", "proj_jcat/jcat-cpp/168.0/manifest.json", "proj_jcat/jcat-cpp/env-0.1/manifest.json" ]
+	}
+	
+• Step 3: Run container with image
+	docker run --name 130.0-demo-container -i -t -v "/c/Users/egugwen/Documents/MobaXterm/home/wspace/:/wspace" -w=/wspace sekidocker.rnd.ki.sw.ericsson.se/proj_jcat/jcat-cpp:130.0-demo tcsh
+
+	docker run --name 152.0-demo-container -i -t -v "/c/Users/egugwen/Documents/MobaXterm/home/wspace/:/wspace" -w=/wspace sekidocker.rnd.ki.sw.ericsson.se/proj_jcat/jcat-cpp:152.0-demo tcsh
+	
+
+• Step 4: Run JCAT
+
+	source /wspace/setup.sh
+	run-jcat-130.0
+	run-jcat-152.0
+	
+	Advanced: 
+	docker run --name 130.1-demo-container -i -t -v "/c/Users/egugwen/Documents/MobaXterm/home/wspace/:/wspace" -w=/wspace sekidocker.rnd.ki.sw.ericsson.se/proj_jcat/jcat-cpp:demo-130.1 run-jcat-130.0.sh
