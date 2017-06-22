@@ -1,0 +1,2 @@
+run image
+docker run -i -t -v "/c/Users/egugwen:/home/egugwen" wenijinew/evol:1.0.1 /bin/tcsh
