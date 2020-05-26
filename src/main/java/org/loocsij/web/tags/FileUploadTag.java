@@ -19,7 +19,7 @@ import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 import org.loocsij.util.StringUtil;
 
@@ -79,7 +79,7 @@ public class FileUploadTag extends SimpleTagSupport {
 	 * logger
 	 *//*
 
-	private static Logger log = Logger.getLogger(FileUploadTag.class);
+	private static Logger log = LogManager.getLogger(FileUploadTag.class);
 
 	*/
 /**

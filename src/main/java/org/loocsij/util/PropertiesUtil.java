@@ -9,7 +9,7 @@ import java.io.OutputStreamWriter;
 import java.util.Enumeration;
 import java.util.Properties;
 
-//import org.apache.log4j.Logger;
+//import org.apache.logging.log4j.Logger;
 
 import org.loocsij.SystemProperties;
 import org.loocsij.logger.*;

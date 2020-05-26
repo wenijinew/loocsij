@@ -7,7 +7,7 @@ import java.io.File;
 import java.util.Calendar;
 import java.util.Date;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 import org.loocsij.logger.Log;
 import org.loocsij.util.DateUtil;

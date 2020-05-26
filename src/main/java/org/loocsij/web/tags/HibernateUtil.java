@@ -4,7 +4,7 @@
 
 package org.loocsij.web.tags;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.hibernate.*;
 import org.hibernate.cfg.*;
 
@@ -12,7 +12,7 @@ import org.hibernate.cfg.*;
  * @author wengm
  *
 public class HibernateUtil {
-	private static Logger log = Logger.getLogger(HibernateUtil.class);
+	private static Logger log = LogManager.getLogger(HibernateUtil.class);
 	*/
 /**
 	 * 

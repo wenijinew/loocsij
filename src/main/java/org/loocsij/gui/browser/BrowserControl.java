@@ -2,7 +2,7 @@ package org.loocsij.gui.browser;
 
 import java.io.IOException;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 /**
  * A simple, static class to display a URL in the system browser.
@@ -22,7 +22,7 @@ import org.apache.log4j.Logger;
  * Note - you must include the url type -- either "http://" or "file://".
  */
 public class BrowserControl {
-	private static final Logger log = Logger.getLogger(BrowserControl.class);
+	private static final Logger log = LogManager.getLogger(BrowserControl.class);
 	
 	// Used to identify the windows platform.
 	private static final String WIN_ID = "Windows";

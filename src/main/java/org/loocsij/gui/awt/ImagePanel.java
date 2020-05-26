@@ -14,7 +14,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 import org.loocsij.gui.util.GUIUtil;
 import org.loocsij.util.*;
@@ -29,7 +29,7 @@ import com.sun.image.codec.jpeg.JPEGImageEncoder;
  *//*
 
 public class ImagePanel extends Panel {
-	private static Logger log = Logger.getLogger(ImagePanel.class);
+	private static Logger log = LogManager.getLogger(ImagePanel.class);
 	*
 	 * 
 	private static final long serialVersionUID = -3672846940140730492L;

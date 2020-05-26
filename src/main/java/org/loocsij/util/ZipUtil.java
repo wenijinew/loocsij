@@ -19,7 +19,7 @@ import java.util.zip.ZipFile;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 import org.loocsij.SystemProperties;
 import org.loocsij.logger.Log;
