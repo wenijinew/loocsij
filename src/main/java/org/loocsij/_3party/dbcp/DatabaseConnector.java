@@ -6,7 +6,7 @@ package org.loocsij._3party.dbcp;
 
 import java.util.Properties;
 import org.apache.commons.dbcp.BasicDataSourceFactory;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 import org.loocsij.logger.Log;
 import org.loocsij.util.EncodingUtil;

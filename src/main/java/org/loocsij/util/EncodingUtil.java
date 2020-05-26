@@ -7,7 +7,7 @@ import java.util.SortedMap;
 import java.util.Set;
 import java.util.Iterator;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 import org.loocsij.logger.Log;
 

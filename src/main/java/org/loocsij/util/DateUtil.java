@@ -8,7 +8,7 @@ import java.util.Hashtable;
 
 import org.loocsij.logger.*;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Utility for Date instance processing. Provide current date's hour, minute,

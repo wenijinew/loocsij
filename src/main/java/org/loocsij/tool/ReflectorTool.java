@@ -5,7 +5,7 @@ package org.loocsij.tool;
 
 import java.lang.reflect.Method;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 import org.loocsij.logger.Log;
 

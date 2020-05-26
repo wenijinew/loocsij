@@ -3,7 +3,7 @@ package org.loocsij.tool;
 import org.loocsij.logger.*;
 import org.loocsij.util.FileUtil;
 
-import org.apache.log4j.*;
+import org.apache.logging.log4j.*;
 
 public class CopyFile {
 	private static Logger log = Log.getLogger(CopyFile.class);

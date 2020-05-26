@@ -6,7 +6,7 @@ package org.loocsij.web.tags;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 import org.loocsij.SystemProperties;
 
@@ -17,7 +17,7 @@ import org.loocsij.SystemProperties;
  * @since 2008/12/25
  */
 class FormData {
-	private static Logger log = Logger.getLogger(FormData.class);
+	private static Logger log = LogManager.getLogger(FormData.class);
 
 	private static final String LINE_SEPARATOR = "\r\n";
 

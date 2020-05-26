@@ -29,7 +29,7 @@ import javax.imageio.stream.MemoryCacheImageInputStream;
 
 import net.jmge.gif.Gif89Encoder;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 import org.loocsij.logger.Log;
 import com.sun.imageio.plugins.gif.GIFImageReader;

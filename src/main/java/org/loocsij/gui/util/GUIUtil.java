@@ -23,7 +23,7 @@ import java.util.Random;
 
 import javax.imageio.ImageIO;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 import org.loocsij.logger.Log;
 import org.loocsij.util.FileUtil;

@@ -16,7 +16,7 @@ import java.util.Date;
 import java.util.Random;
 import java.util.regex.Pattern;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 import org.loocsij.SystemProperties;
 import org.loocsij.logger.Log;

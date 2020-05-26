@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 import org.loocsij.img.ImageUtil;
 
@@ -32,7 +32,7 @@ import org.loocsij.img.ImageUtil;
  * 
  */
 public class VerifyImageServlet extends HttpServlet {
-	Logger log = Logger.getLogger(VerifyImageServlet.class);
+	Logger log = LogManager.getLogger(VerifyImageServlet.class);
 
 	private static final long serialVersionUID = 1L;
 

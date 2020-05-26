@@ -6,7 +6,7 @@ package org.loocsij.tool;
 import java.io.File;
 import java.util.ArrayList;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 
 import org.loocsij.SystemProperties;
 import org.loocsij.logger.Log;
