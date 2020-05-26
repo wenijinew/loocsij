@@ -1,0 +1,16 @@
+# Dockerfile for JCAT CPP execution environment
+# Version: 132.0
+# JDK 1.6, Maven , Git , Ant, TCSH
+
+FROM ubuntu:14.04
+MAINTAINER Bruce Wen "bruce.wen@ericsson.com"
+
+#RUN apt-get update
+#RUN apt-get install openjdk-6-jdk
+#RUN apt-get install maven
+#RUN apt-get install ant
+#RUN apt-get install tcsh
+
+
+
+
