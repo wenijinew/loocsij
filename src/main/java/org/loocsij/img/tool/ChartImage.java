@@ -7,15 +7,15 @@ public class ChartImage {
     public ChartImage() {
     }
     public void createImage(String fileLocation) {
-        try {
-            FileOutputStream fos = new FileOutputStream(fileLocation);
-            BufferedOutputStream bos = new BufferedOutputStream(fos);
-            JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(bos);
-            encoder.encode(image);
-            bos.close();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+        //try {
+        //    FileOutputStream fos = new FileOutputStream(fileLocation);
+        //    BufferedOutputStream bos = new BufferedOutputStream(fos);
+        //    JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(bos);
+        //    encoder.encode(image);
+        //    bos.close();
+        //} catch (Exception e) {
+        //    System.out.println(e);
+        //}
     }
     public void graphicsGeneration(int h1, int h2, int h3, int h4, int h5) {
         final int X = 10;
