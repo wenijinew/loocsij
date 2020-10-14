@@ -15,10 +15,10 @@ import org.apache.logging.log4j.*;
  <code><pre>
  File logFile = new File("/path/to/log/file.log");
  DecoratorLargeDataFileReader largeDataDecorator = new DecoratorLargeDataFileReader(logFile);
- // ExtendedCli eCli = ...
- Decorator decorator = Decorators.decorateOneSendExecution(largeDataDecorator, eCli);
- eCli.addDecorator(decorator);
- </pre></code>
+// ExtendedCli eCli = ...
+Decorator decorator = Decorators.decorateOneSendExecution(largeDataDecorator, eCli);
+eCli.addDecorator(decorator);
+</pre></code>
  *</p>
  */
 
@@ -111,7 +111,7 @@ public class FileProcessor {
             while (count > 0 && filePointer > 0) {
                 /*
                  * '\n'==13,so you can also write in the following method if
-                 * (accessor.read() == 13) {
+                 * (accessor.read() == 13) {}
                  */
                 if (accessor.read() == '\n') {
                     count--;
@@ -132,6 +132,7 @@ public class FileProcessor {
             }
             if (filePointer == 0) {
                 accessor.seek(filePointer);
+            }
 
             lineContent = accessor.readLine();
             descLineNumber++;
@@ -154,7 +155,7 @@ public class FileProcessor {
         this.accessor.close();
     }
 
-    public static String getFileName(String datePattern,String name,String ext){
+    public static String getFileName(String datePattern, String name, String ext){
         StringBuffer fileName = new StringBuffer();
         if(name==null||ext==null){
             return null;
@@ -181,7 +182,7 @@ public class FileProcessor {
 
         try {
             while ((c = reader.read()) != -1)
-               buf.append((char)c);
+                buf.append((char)c);
         } catch (IOException e) {
             log.error("Error", e);
         }
