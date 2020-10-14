@@ -39,39 +39,39 @@ public class WebResourceExtractor {
 	 */
 	public static void download(String seedURL, String fileExtension,
 			int maxNum, String storeLocation) {
-		String[] urls = URLExtractor.extractAllURLs(seedURL, fileExtension,
-				maxNum);
-		if (urls == null) {
-			return;
-		}
-		WebAccessor web = null;
-		String file = null;
-		String destFileName = null;
-		boolean isOk = false;
-		log.info("results num:" + urls.length);
-		for (int i = 0; i < urls.length; i++) {
-			web = WebAccessor.getInstance(urls[i]);
-			if (web == null) {
-				continue;
-			}
-			file = web.getFile();
-			if (file == null) {
-				continue;
-			}
-			if (file.indexOf('?') > 0) {
-				file = file.substring(0, file.indexOf('?'));
-			}
-			if (file.length() <= 1) {
-				file = web.getHost() + fileExtension;
-			}
-			destFileName = storeLocation
-					+ SystemProperties.sFileSeparator
-					+ file.substring(file.lastIndexOf("/") > 0 ? file
-							.lastIndexOf("/") : 0);
-			isOk = download(urls[i], destFileName);
-			log.info("[" + (isOk ? "OK" : "FAIL") + "] - download " + urls[i]
-					+ " to " + destFileName);
-		}
+//		String[] urls = URLExtractor.extractAllURLs(seedURL, fileExtension,
+//				maxNum);
+//		if (urls == null) {
+//			return;
+//		}
+//		WebAccessor web = null;
+//		String file = null;
+//		String destFileName = null;
+//		boolean isOk = false;
+//		log.info("results num:" + urls.length);
+//		for (int i = 0; i < urls.length; i++) {
+//			web = WebAccessor.getInstance(urls[i]);
+//			if (web == null) {
+//				continue;
+//			}
+//			file = web.getFile();
+//			if (file == null) {
+//				continue;
+//			}
+//			if (file.indexOf('?') > 0) {
+//				file = file.substring(0, file.indexOf('?'));
+//			}
+//			if (file.length() <= 1) {
+//				file = web.getHost() + fileExtension;
+//			}
+//			destFileName = storeLocation
+//					+ SystemProperties.sFileSeparator
+//					+ file.substring(file.lastIndexOf("/") > 0 ? file
+//							.lastIndexOf("/") : 0);
+//			isOk = download(urls[i], destFileName);
+//			log.info("[" + (isOk ? "OK" : "FAIL") + "] - download " + urls[i]
+//					+ " to " + destFileName);
+//		}
 	}
 
 	/**

@@ -9,10 +9,19 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.apache.logging.log4j.*;
 /**
- * Provides all kinds of operation on file.
- * @author wsxspring
- *
+ *<p>
+ * Decorator to send command, read output and save to specified file. This decorator is used when the output of the command is predictably huge.<br />
+ * Usage example:
+ <code><pre>
+ File logFile = new File("/path/to/log/file.log");
+ DecoratorLargeDataFileReader largeDataDecorator = new DecoratorLargeDataFileReader(logFile);
+ // ExtendedCli eCli = ...
+ Decorator decorator = Decorators.decorateOneSendExecution(largeDataDecorator, eCli);
+ eCli.addDecorator(decorator);
+ </pre></code>
+ *</p>
  */
+
 public class FileProcessor {
     private static Logger log = LogManager.getLogger(FileProcessor.class);
     /**
@@ -39,7 +48,7 @@ public class FileProcessor {
     }
 
     /**
-     * 
+     *
      * @param file
      * @throws FileNotFoundException
      */
@@ -78,7 +87,7 @@ public class FileProcessor {
         String c = new Long(content).toString();
         this.writeLine(c);
     }
-    
+
     public String readLineFromEOF() throws IOException {
         if (file.length() == 0) {
             return null;
@@ -94,7 +103,7 @@ public class FileProcessor {
          * there are two '\n' between the beginning of one line and the end of
          * another line
          */
-        int descLineNumber = 0; 
+        int descLineNumber = 0;
         int count = 2;
         String lineContent = null;
         if (accessor.read() > 0 && filePointer > 0) {
@@ -123,7 +132,6 @@ public class FileProcessor {
             }
             if (filePointer == 0) {
                 accessor.seek(filePointer);
-            }
 
             lineContent = accessor.readLine();
             descLineNumber++;
@@ -137,7 +145,7 @@ public class FileProcessor {
         }
         return lineContent;
     }
- 
+
     public long length() {
         return file.length();
     }
@@ -145,7 +153,7 @@ public class FileProcessor {
     public void closeFile() throws IOException, CloneNotSupportedException {
         this.accessor.close();
     }
-    
+
     public static String getFileName(String datePattern,String name,String ext){
         StringBuffer fileName = new StringBuffer();
         if(name==null||ext==null){
@@ -154,13 +162,13 @@ public class FileProcessor {
         if(datePattern!=null){
             parser = new SimpleDateFormat(datePattern);
             String strDate = parser.format(new Date());
-            fileName.append(strDate).append("_").append(name).append(".").append(ext);          
+            fileName.append(strDate).append("_").append(name).append(".").append(ext);
         }else{
             fileName.append(name).append(".").append(ext);
         }
         return fileName.toString();
     }
-    
+
     public static String read(String file){
         FileReader reader = null;
         try{
@@ -182,6 +190,6 @@ public class FileProcessor {
     }
 
     public static void main(String[] strs) throws Exception {
-        
+
     }
 }
